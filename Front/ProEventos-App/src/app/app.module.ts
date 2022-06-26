@@ -8,11 +8,13 @@ import { EventosComponent } from './eventos/eventos.component';
 import { PalestranteComponent } from './palestrante/palestrante.component';
 import { EventosService } from './eventos/services/eventos.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
     EventosComponent,
-    PalestranteComponent
+    PalestranteComponent,
+    NavbarComponent
    ],
   imports: [
     BrowserModule,
