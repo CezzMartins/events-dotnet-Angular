@@ -9,7 +9,7 @@ export class EventosService {
   constructor(private http: HttpClient) { }
 
 
-  public urlBase = "https://localhost:7104/api/Evento";
+  public urlBase: string = "https://localhost:7104/api/Evento";
 
 
 
