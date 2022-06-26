@@ -9,6 +9,6 @@ namespace ProEventos.API.data
         {
 
         }
-        public DbSet<Evento> Eventos { get; set; }
+        public DbSet<Evento> Eventos { get; set; } = default!;
     }   
 }
