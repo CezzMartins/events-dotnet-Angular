@@ -8,7 +8,7 @@ namespace ProEventos.Domain
         public DateTime? DateStart { get; set; }
         public DateTime? DateEnd { get; set; }
         public int Quantity { get; set; }
-        public int EventID { get; set; }
-        public Event? Event { get; set; }
+        public int EventId { get; set; }
+        public Evento? Evento { get; set; }
     }
 }
