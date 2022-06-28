@@ -2,14 +2,14 @@ namespace ProEventos.Domain
 {
     public class Palestrante
     {
-        public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? Description { get; set; }
-        public string? ImageUrl { get; set; }
-        public string? CellPhone { get; set; }
-        public string? Email { get; set; }
-        public IEnumerable<RedeSocial>? RedeSocial { get; set; }
-        public IEnumerable<PalestranteEvento>? PalestranteEventos { get; set; }
+        public int Id { get; set; } = default!;
+        public string Name { get; set; } = default!;
+        public string Description { get; set; } = default!;
+        public string ImageUrl { get; set; } = default!;
+        public string CellPhone { get; set; } = default!;
+        public string Email { get; set; } = default!;
+        public IEnumerable<RedeSocial> RedeSociais { get; set; } = default!;
+        public IEnumerable<PalestranteEvento> PalestranteEventos { get; set; } = default!;
 
 
     }
