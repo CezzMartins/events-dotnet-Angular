@@ -1,39 +1,16 @@
 
 using Microsoft.EntityFrameworkCore;
 using ProEventos.Domain;
-namespace ProEventos.Persistence
+namespace ProEventos.Persistence.Iterfaces
 {
-    public class ProEventoPersistence : IProEventosPersistence
+    public class PalestrantePersistence : IPalestrantePersistence
     {
         private readonly ProEventosContext _context;
-        public ProEventoPersistence(ProEventosContext context)
+        public PalestrantePersistence(ProEventosContext context)
         {
             this._context = context;
 
         }
-        public void Add<T>(T entity) where T : class
-        {
-            _context.Add(entity);
-        }
-
-        public void Update<T>(T entity) where T : class
-        {
-            _context.Update(entity);
-        }
-        public void Delete<T>(T entity) where T : class
-        {
-            _context.Remove(entity);
-        }
-
-        public void DeleteRange<T>(T entityArrays) where T : class
-        {
-            _context.RemoveRange(entityArrays);
-        }
-        public async Task<bool> saveChangesAsync()
-        {
-            return (await _context.SaveChangesAsync()) > 0;
-        }
-
         public async Task<Evento[]> GetAllEventosAsync(bool includePalestrante = false)
         {
             IQueryable<Evento> query = _context.Eventos.Include(e => e.Lotes).Include(e => e.RedeSociais);
@@ -58,7 +35,7 @@ namespace ProEventos.Persistence
             return await query.ToArrayAsync();
         }
 
-        public async Task<Evento> GetAllEventoByIdAsync(int EventoId, bool includePalestrante = false)
+        public async Task<Evento>  GetAllEventoByIdAsync(int EventoId, bool includePalestrante = false)
         {
             IQueryable<Evento> query = _context.Eventos.Include(e => e.Lotes).Include(e => e.RedeSociais);
             
